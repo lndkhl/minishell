@@ -1,7 +1,7 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    makefile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: lnkambul <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
@@ -24,7 +24,7 @@ SRCE	= $(addprefix $(SDIR), $(SRCS))
 OBJS	= $(addprefix $(BDIR), $(SRCS:.c=.o))
 
 .DELETE_ON_ERROR:
-all: $(BDIR) $(LIBFT) $(NAME)
+all: $(BDIR) $(LBFT) $(NAME)
 
 $(BDIR):
 	@echo "making $(NAME)"
@@ -35,6 +35,7 @@ $(BDIR)%.o: $(SDIR)%.c
 
 $(LBFT):
 	@make -C $(LDIR)
+	@make clean -C $(LDIR)
 
 $(NAME): $(OBJS)
 	@$(CC) $(FLAGS) $(OBJS) -L $(LDIR) $(LBFT) -o $(NAME)

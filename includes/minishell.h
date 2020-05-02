@@ -1,2 +1,5 @@
 #include <sys/wait.h>
-#include "libft
+#include <sys/types.h>
+#include "../libft/includes/libft.h"
+
+
