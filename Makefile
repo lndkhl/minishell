@@ -49,4 +49,8 @@ fclean:
 
 re: fclean all
 
+rclean:
+	@make re -C $(LDIR)
+	@make re
+
 .PHONY: all fclean clean re
