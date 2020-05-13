@@ -31,7 +31,7 @@ $(BDIR):
 	@mkdir $(BDIR)
 
 $(BDIR)%.o: $(SDIR)%.c
-	@$(CC) $(CFLAGS) -I $(IDIR) -o $@ -c $<
+	@$(CC) $(FLAGS) -I $(IDIR) -o $@ -c $<
 
 $(LBFT):
 	@make -C $(LDIR)
@@ -42,10 +42,10 @@ $(NAME): $(OBJS)
 	@echo "made $(NAME)"
 
 clean:
-	@rm -f $(OBJECTS)
+	@rm -f $(OBJS)
 
 fclean:
-	@rm -f $(OBJECTS) $(NAME)
+	@rm -f $(OBJS) $(NAME)
 
 re: fclean all
 
