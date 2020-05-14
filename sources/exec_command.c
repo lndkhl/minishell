@@ -11,7 +11,15 @@ void	exec_command(char **command[], char **env[])
 		path = ft_strjoin("/usr/bin/", *command[0]);
 	pid = fork();
 	if (pid == 0)
-		execve(path, *command, *env);
+	{
+		if(execve(path, *command, *env) == -1)
+		{
+			ft_putstr("minishell: ");
+			ft_putstr(path);
+			ft_putendl(": command not found");
+			exit(EXIT_SUCCESS);
+		}
+	}
 	else
 		wait(NULL);
 	free(path);
