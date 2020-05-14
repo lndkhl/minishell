@@ -12,12 +12,12 @@
 
 #include "libft.h"
 
-char				*ft_strtrim(const char *s)
+char			*ft_strtrim(const char *s)
 {
 	unsigned int	ws;
 	unsigned int	i;
-	size_t			j;
-	char			*n;
+	size_t		j;
+	char		*n;
 
 	if (!s)
 		return (NULL);
@@ -34,7 +34,7 @@ char				*ft_strtrim(const char *s)
 	while ((s[j] == 32 || s[j] == '\t' || s[j] == '\n') && (j-- > i))
 		ws++;
 	j = (unsigned int)ft_strlen(s) - ws;
-	if (!(n = ft_strsub(s, i, j)))
+	if (!j || !(n = ft_strsub(s, i, j)))
 		return (NULL);
 	return (n);
 }
