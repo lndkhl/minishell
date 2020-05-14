@@ -15,4 +15,5 @@ void	exec_command(char **command[], char **env[])
 	else
 		wait(NULL);
 	free(path);
+	ft_arrdel(*command);
 }

@@ -1,8 +1,8 @@
 #include "../includes/minishell.h"
 
-void	exec_exit(char **command[], char **envy[])
+void	exec_exit(char **command[], char **env[])
 {
 	ft_arrdel(*command);
-	ft_arrdel(*envy);
+	ft_arrdel(*env);
 	exit(EXIT_SUCCESS);
 }

@@ -7,6 +7,7 @@ int	real_count(char *arr[])
 	char	*temp;
 
 	i = -1;
+	count = 0;
 	while (arr[++i])
 	{
 		if (!(temp = ft_strtrim(arr[i])))
