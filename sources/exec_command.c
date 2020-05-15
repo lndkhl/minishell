@@ -1,10 +1,11 @@
 #include "../includes/minishell.h"
 
-void	exec_command(char **command[], char **env[])
+void	exec_command(char **command[], char *args[], char **env[])
 {
 	pid_t	pid;
 	char	*path;
 
+	free(*args);
 	if (ft_strchr(*command[0], '/'))
 		path = ft_strdup(*command[0]);
 	else

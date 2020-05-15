@@ -9,7 +9,6 @@ int	main(int argc, char **argv, char **envp)
 	(void)(argc && argv);
 	ft_putstr("\e[92m$> \e[39m");
 	envy = ft_arrdup(envp);
-	line = NULL;
 	while (get_next_line(STDIN_FILENO, &line) == 1)
 	{
 		if (line[0])
