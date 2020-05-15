@@ -16,7 +16,7 @@ void	ft_parse(char *line[], char **env[])
 	if (ft_strcmp(command[0], "exit") == 0)
 		ft_exit(&command, env);
 	else if (ft_strcmp(command[0], "echo") == 0)
-		ft_echo(&command, env);
+		ft_echo(&command);
 	/*
 	else if (ft_strcmp(parameters[0], "cd" == 0)
 		ft_cd(&command, env);

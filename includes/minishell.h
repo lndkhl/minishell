@@ -10,13 +10,13 @@ void	ft_exit(char **cmd[], char **env[]);
 void	ft_command(char **cmd[], char **env[]);
 char	**ft_explode(char *arr, int count);
 int	ft_countargs(char *args);
-void	ft_echo(char **cmd[], char **env[]);
+void	ft_echo(char **cmd[]);
 char	*ft_argsub(char *args, int *index);
 
-void	ft_arrprint(char *arr[]);
 char	**ft_arrdup(char *arr[]);
 int	ft_arrlen(char *arr[]);
 void	ft_arrdel(char *arr[]);
+void	ft_arrprint(char *arr[]);
 
 int	ft_iswhitespace(char c);
 #endif

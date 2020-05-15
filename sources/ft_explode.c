@@ -20,7 +20,6 @@ char	**ft_explode(char *args, int count)
 		}
 	}
 	shrapnel[i] = NULL;
-	ft_arrprint(shrapnel);
 	free(args);
 	return (shrapnel);
 }
