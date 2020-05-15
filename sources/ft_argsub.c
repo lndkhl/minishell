@@ -6,7 +6,7 @@ char	*ft_argsub(char *args, int *index)
 	char	delim;
 	char	*sub;
 
-	i = 0;
+	i = *index;
 	if (args[*index] == '\'' || args[*index] == '\"')
 	{
 		delim = args[*index];
