@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-static char		**ft_poparray(char **ptr, const char *p, char c, size_t w)
+static char	**ft_poparray(char **ptr, const char *p, char c, size_t w)
 {
-	size_t			i;
+	size_t		i;
 	unsigned int	j;
 	unsigned int	k;
 
@@ -37,7 +37,7 @@ static char		**ft_poparray(char **ptr, const char *p, char c, size_t w)
 	return (ptr);
 }
 
-char			**ft_strsplit(const char *s, char c)
+char		**ft_strsplit(const char *s, char c)
 {
 	char		**arr;
 	size_t		i;

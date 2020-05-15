@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
-static int			cleanup(const int fd, char **line, char **arr, char *temp)
+static int	cleanup(const int fd, char **line, char **arr, char *temp)
 {
 	if (!(*line = ft_strdup(arr[fd])))
 		return (-1);
@@ -21,29 +21,30 @@ static int			cleanup(const int fd, char **line, char **arr, char *temp)
 	return (1);
 }
 
-static int			line_ptcl(const int fd, char **line, char **arr, char *temp)
+static int	line_ptcl(const int fd, char **line, char **arr, char *temp)
 {
-	if (!(*line = ft_strsub(arr[fd], 0, (ft_strchr(arr[fd], '\n') - arr[fd]))))
-		return (-1);
 	ft_strdel(&temp);
+	if (!(*line = ft_strsub(arr[fd], 0, (ft_strchr(arr[fd], '\n') - \
+			arr[fd]))))
+		return (-1);
 	if (!(temp = ft_strsub(ft_strchr(arr[fd], '\n') + 1, 0,\
-						ft_strlen(arr[fd]) - ft_strlen(*line))))
+					ft_strlen(arr[fd]) - ft_strlen(*line))))
 		return (-1);
 	ft_strdel(&arr[fd]);
-	if (!(arr[fd] = ft_strdup(temp)))
+	if (!(arr[fd] = temp))
 		return (-1);
-	ft_strdel(&temp);
 	return (1);
 }
 
-static int			loop_read(const int fd, char **line, char **arr, char *temp)
+static int	loop_read(const int fd, char **line, char **arr, char *temp)
 {
 	char	*t2;
-	int		i;
+	int	i;
 
 	while ((i = read(fd, temp, BUFF_SIZE)))
 	{
-		if (!(t2 = (arr[fd]) ? ft_strjoin(arr[fd], temp) : ft_strdup(temp)))
+		if (!(t2 = (arr[fd]) ? ft_strjoin(arr[fd], temp) : \
+				ft_strdup(temp)))
 			return (-1);
 		ft_strdel(&arr[fd]);
 		if (!(arr[fd] = ft_strdup(t2)))
@@ -63,7 +64,7 @@ static int			loop_read(const int fd, char **line, char **arr, char *temp)
 	return (0);
 }
 
-int					get_next_line(const int fd, char **line)
+int		get_next_line(const int fd, char **line)
 {
 	static char		*arr[4096];
 	char			*temp;
