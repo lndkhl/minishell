@@ -74,7 +74,6 @@ char			*ft_strtrim(const char *s);
 int			ft_tolower(int c);
 
 int			ft_toupper(int c);
-char			*ft_ws_skipper(char *p);
 size_t			ft_wordcount(const char *i, char c);
 int			get_next_line(const int fd, char **line);
 char			*ft_strtok_r(char *str, const char *delim, char **svpt);

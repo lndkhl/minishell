@@ -16,7 +16,7 @@ int	main(int argc, char **argv, char **envp)
 			trim = ft_strtrim(line);
 			free(line);
 			if (trim)
-				parse_command(&trim, &envy);
+				ft_parse(&trim, &envy);
 		}
 		else if (line)
 			free(line);

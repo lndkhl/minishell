@@ -4,11 +4,14 @@
 # include <sys/wait.h>
 # include "../libft/includes/libft.h"
 
-void	parse_command(char *args[], char **env[]);
-void	exec_exit(char **cmd[], char *args[], char **params[], char **env[]);
-void	exec_command(char **cmd[], char *args[], char **env[]);
-char	**trim_array(char *arr[], int count);
-int	real_count(char *arr[]);
+void	ft_parse(char *args[], char **env[]);
+int	ft_quotecheck(char *args, int index);
+void	ft_exit(char **cmd[], char **env[]);
+void	ft_command(char **cmd[], char **env[]);
+char	**ft_explode(char *arr, int count);
+int	ft_countargs(char *args);
+void	ft_echo(char **cmd[], char **env[]);
+char	*ft_argsub(char *args, int *index);
 
 void	ft_arrprint(char *arr[]);
 char	**ft_arrdup(char *arr[]);
