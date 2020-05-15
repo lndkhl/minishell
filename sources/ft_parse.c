@@ -8,7 +8,8 @@ void	ft_parse(char *line[], char **env[])
 
 	args = ft_strdup(*line);
 	free(*line);
-	if ((count = ft_countargs(args) == -1))
+	count = ft_countargs(args);
+	if (count == -1)
 	{
 		ft_putendl("minishell: syntax error: unclosed quotation mark");
 		return;

@@ -9,9 +9,7 @@ int	ft_countargs(char *args)
 	count = 0;
 	while (args[i])
 	{
-		while (args[i] == 32 || args[i] == '\t' || args[i] == '\n'\
-			|| args[i] == '\r' || args[i] == '\f'\
-			|| args[i] == '\v')
+		while (ft_iswhitespace(args[i]))
 			i++;
 		if (args[i] != '\0')
 			count++;
@@ -22,9 +20,7 @@ int	ft_countargs(char *args)
 			if (!(i = ft_quotecheck(args, i)))
 				return (-1);
 		}
-		while (args[i] && args[i] != 32 && args[i] != '\t' &&\
-			args[i] != '\n' && args[i] != '\r' && args[i] != '\f'\
-			&& args[i] != '\v')
+		while (args[i] && (ft_iswhitespace(args[i]) == 0))
 			i++;
 	}
 	return (count);

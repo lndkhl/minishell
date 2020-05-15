@@ -15,12 +15,10 @@ char	*ft_argsub(char *args, int *index)
 	}
 	else
 	{
-		while (args[i] && args[i] != 32 && args[i] != '\t' && \
-			args[i] != '\n' && args[i] != '\r'\
-			 && args[i] != '\f' && args[i] != '\v')
+		while (args[i] && !ft_iswhitespace(args[i]))
 			i++;
 	}
-	sub = ft_strsub(args, (*index) + 1, i - (*index) - 1);
+	sub = ft_strsub(args, (*index), i - (*index));
 	*index = i;
 	return (sub);
 }

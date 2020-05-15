@@ -13,9 +13,7 @@ char	**ft_explode(char *args, int count)
 	{
 		while (args[j])
 		{
-			while (args[j] == 32 || args[j] == '\t'\
- 				|| args[j] == '\n' || args[j] == '\r'\
-					|| args[j] == '\f' || args[j] == '\v')
+			while (ft_iswhitespace(args[j]))
 				j++;
 			if (args[j] != '\0')
 				shrapnel[i] = ft_argsub(args, &j);
