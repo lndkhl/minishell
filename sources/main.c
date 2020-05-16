@@ -5,10 +5,11 @@ int	main(int argc, char **argv, char **envp)
 	char	**envy;
 	char	*line;
 	char	*trim;
+	int	count;
 
 	(void)(argc && argv);
-	ft_putstr("\e[92m$> \e[39m");
 	envy = ft_arrdup(envp);
+	ft_prompt(&envy);
 	while (get_next_line(STDIN_FILENO, &line) == 1)
 	{
 		if (line[0])
@@ -16,11 +17,12 @@ int	main(int argc, char **argv, char **envp)
 			trim = ft_strtrim(line);
 			free(line);
 			if (trim)
-				ft_parse(&trim, &envy);
+				count = ft_countargs(trim);
+			(trim) ? ft_parse(&trim, count, &envy) : NULL;
 		}
 		else if (line)
 			free(line);
-		ft_putstr("\e[92m$> \e[39m");
+		ft_prompt(&envy);
 	}
 	ft_arrdel(envy);
 	return (0);
