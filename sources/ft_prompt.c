@@ -8,10 +8,10 @@ void	ft_prompt(char **env[])
 	user = ft_resolve("$LOGNAME", *env);
 	if (!user)
 	{
-		ft_putstr("\e[92m[minishell]$ \e[39m");
+		ft_putstr("[minishell]$> ");
 		return ;
 	}
-	ft_putstr("[\e[92m");
+	ft_putstr("[");
 	ft_putstr(user);
-	ft_putstr("@minishell\e[39m]$ ");
+	ft_putstr("@minishell]$> ");
 }

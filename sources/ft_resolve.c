@@ -3,28 +3,24 @@
 char	*ft_resolve(char *command, char *env[])
 {
 	int	i;
+	char	*key;
+	char	*envkey;
 	char	*temp;
-	char	*sub;
 
 	i = -1;
-	sub = NULL;
-	sub = (ft_strchr(command, '/')) ? ft_strsub(command, 1,\
-		ft_strlen(command) - ft_strlen(ft_strchr(command,'/')) - 1) :\
-		 ft_strsub(command, 1, ft_strlen(command) - 1);
-	if (command[0] == '~')
-	{
-		(sub) ? free(sub) : NULL;
-		sub = ft_strdup("HOME");
-	}
+	key = ft_initkey(command);
 	while (env[++i])
 	{
-		if ((temp = ft_strstr(env[i], sub)))
+		envkey = ft_initkey(env[i]);
+		if (ft_strcmp(key, envkey) == 0)
 		{
-			temp = &(env[i][ft_strlen(sub) + 1]);
-			free(sub);
+			temp = &(env[i][ft_strlen(envkey) + 1]);
+			free(key);
+			free(envkey);
 			return (temp);
 		}
 	}
-	free(sub);
+	free(key);
+	free(envkey);
 	return (NULL);
 }
