@@ -9,7 +9,7 @@ char	*ft_resolve(char *command, char *env[])
 	i = -1;
 	sub = NULL;
 	sub = (ft_strchr(command, '/')) ? ft_strsub(command, 1,\
-		ft_strlen(command) - ft_strlen(ft_strchr(command,'/'))) :\
+		ft_strlen(command) - ft_strlen(ft_strchr(command,'/')) - 1) :\
 		 ft_strsub(command, 1, ft_strlen(command) - 1);
 	if (command[0] == '~')
 	{
