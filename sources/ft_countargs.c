@@ -15,12 +15,13 @@ int	ft_countargs(char *args)
 			count++;
 		else
 			break;
-		if (args[i] == '\'' || args[i] == '\"')
+		if (ft_isquote(args[i]))
 		{
-			if (!(i = ft_quotecheck(args, i)))
+			if (!(i = ft_closequote(args, i)))
 				return (-1);
 		}
-		while (args[i] && (ft_iswhitespace(args[i]) == 0))
+		while (args[i] && !ft_iswhitespace(args[i]) &&\
+			!ft_isquote(args[i]))
 			i++;
 	}
 	return (count);

@@ -7,7 +7,7 @@ char	*ft_argsub(char *args, int *index)
 	char	*sub;
 
 	delim = 0;
-	if (args[*index] == '\'' || args[*index] == '\"')
+	if (ft_isquote(args[*index]))
 	{
 		delim = args[*index];
 		*index += 1;

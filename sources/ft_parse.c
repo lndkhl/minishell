@@ -15,14 +15,14 @@ void	ft_parse(char *line[], int count, char **env[])
 		ft_exit(&command, env);
 	else if (ft_strcmp(command[0], "echo") == 0)
 		ft_echo(&command, env);
-	/*
-	else if (ft_strcmp(parameters[0], "cd" == 0)
-		ft_cd(&command, env);
-	else if (ft_strcmp(parameters[0], "setenv" == 0)
-		ft_setenv(&command, env);
-	else if (ft_strcmp(parameters[0], "env" == 0)
+	else if (ft_strcmp(command[0], "env") == 0)
 		ft_env(&command, env);
-	else if (ft_strcmp(parameters[0], "unsetenv" == 0)
+	/*
+	else if (ft_strcmp(command[0], "cd" == 0)
+		ft_cd(&command, env);
+	else if (ft_strcmp(command[0], "setenv" == 0)
+		ft_setenv(&command, env);
+	else if (ft_strcmp(command[0], "unsetenv" == 0)
 		ft_unsetenv(&command, env);
 	*/
 	else
