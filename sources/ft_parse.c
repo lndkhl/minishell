@@ -12,11 +12,11 @@ void	ft_parse(char *line[], char **env[])
 	(count > -1) ? command = ft_explode(args, count) :\
 		ft_putendl("minishell: syntax error: unclosed quotation mark");
 	if (count == -1)
-		return;
+		return ;
 	if (ft_strcmp(command[0], "exit") == 0)
 		ft_exit(&command, env);
 	else if (ft_strcmp(command[0], "echo") == 0)
-		ft_echo(&command);
+		ft_echo(&command, env);
 	/*
 	else if (ft_strcmp(parameters[0], "cd" == 0)
 		ft_cd(&command, env);

@@ -1,21 +1,8 @@
 #include "../includes/minishell.h"
 
-void	ft_echo(char **command[])
+void	ft_echo(char **command[], char **env[])
 {
-	//int	i;
-
-	//i = 1;
 	ft_putendl("ft_echo:");
-	ft_arrprint(*command);
-	/*
-	while (*command[i] != NULL)
-	{
-		ft_putstr(*command[i]);
-		if (*command[++i])
-			ft_putchar(32);
-		else
-			ft_putchar('\n');
-	}
-	*/
+	ft_arrprint(*command, env);
 	ft_arrdel(*command);
 }
