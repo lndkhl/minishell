@@ -43,4 +43,5 @@ int	ft_invalidkey(char *args[]);
 int	ft_iswhitespace(char c);
 int	ft_userex(char *c);
 int	ft_isquote(char c);
+void	ft_error(char *args, int type);
 #endif

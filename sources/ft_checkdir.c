@@ -6,9 +6,8 @@ int	ft_checkdir(char *args)
 
 	if (lstat(args, &st_buff) < 0)
 	{
-		ft_putstr("minishell: cd: ");
-		(args) ? ft_putstr(args) : NULL;
-		ft_putstr(": no such file or directory\n");
+		ft_error(args, 3);
+		return (0);
 	}
 	else if ((st_buff.st_mode & S_IFMT) == S_IFLNK)
 		return (2);
@@ -18,12 +17,11 @@ int	ft_checkdir(char *args)
 			&&!(st_buff.st_mode & S_IRUSR) &&\
 			 !(st_buff.st_mode & S_IROTH)))
 		{
-			ft_putstr("minishell: cd: ");
-			(args) ? ft_putstr(args) : NULL;
-			ft_putstr(": permission denied\n");
+			ft_error(args, 2);
 			return (0);
 		}
 		return (1);
 	}
+	ft_error(args, 1);
 	return (0);
 }
