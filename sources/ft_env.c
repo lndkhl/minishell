@@ -8,7 +8,6 @@ void	ft_env(char **command[], char **env[])
 	ft_arrdel(*command);
 	i = -1;
 	arr = *env;
-	ft_putendl("ft_env: ");
 	while (arr[++i])
 		ft_putendl(arr[i]);
 }

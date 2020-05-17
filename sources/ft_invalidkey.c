@@ -13,6 +13,9 @@ int	ft_invalidkey(char *args[])
 			ft_strlen(ft_strchr(args[i], '=')));
 		if (!ft_isalpha(key[0]) && key[0] != '$')
 		{
+			ft_putstr("minishell: ");
+			ft_putstr(key);
+			ft_putendl(": is not a valid identifier");
 			free (key);
 			return (1);
 		}
