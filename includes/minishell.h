@@ -37,6 +37,7 @@ void	ft_remove(char **arr[], int index);
 /*misc*/
 void	ft_replace(char **arr[], char *args, int index, char *key);
 char	*ft_pathprep(char *args, char *cmd);
+void	ft_setcd(char *args, char **env[]);
 char	*ft_initkey(char *args);
 int	ft_invalidkey(char *args[]);
 int	ft_iswhitespace(char c);

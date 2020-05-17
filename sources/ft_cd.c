@@ -17,6 +17,10 @@ void	ft_cd(char **command[], char **env[])
 	else
 		path = ft_dirpath(args[1], env);
 	ft_arrdel(*command);
-	(path) ? ft_putendl(path) : NULL;
-	(path) ? free(path) : NULL;
+	if (!path)
+		return ;
+	(ft_strcmp(path, "-") == 0) ? ft_putendl(path) : NULL;
+	ft_setcd(path, env);
+	chdir(path);
+	free(path);
 }

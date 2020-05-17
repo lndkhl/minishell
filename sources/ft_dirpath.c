@@ -27,4 +27,3 @@ char	*ft_dirpath(char *args, char **env[])
 	}
 	return (path);
 }
-
