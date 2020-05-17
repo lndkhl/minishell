@@ -9,10 +9,11 @@ void	ft_cd(char **command[], char **env[])
 	args = *command;
 	if (ft_arrlen(args) > 2)
 		ft_putendl("minishell: cd: too many arguments");
-	else if (!(args[1]) || ft_strcmp(args[1], "~") == 0 ||\
-			ft_strcmp(args[1], "--") == 0)
+	else if ((!(args[1]) || ft_strcmp(args[1], "~") == 0 ||\
+			ft_strcmp(args[1], "--") == 0) && ft_resolve("HOME",
+				*env))
 		path = ft_strdup(ft_resolve("$HOME", *env));
-	else if (ft_strcmp(args[1], "-") == 0)
+	else if (ft_strcmp(args[1], "-") == 0 && ft_resolve("$OLDPWD", *env))
 		path = ft_strdup(ft_resolve("$OLDPWD", *env));
 	else
 		path = ft_dirpath(args[1], env);
