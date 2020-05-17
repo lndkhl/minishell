@@ -13,7 +13,10 @@ void	ft_arrpush(char **arr[], char *args)
 	i = -1;
 	while (temp[++i])
 		dup[i] = ft_strdup(temp[i]);
-	dup[i++] = ft_strdup(args);
+	if (ft_strchr(args, '='))
+		dup[i++] = ft_strdup(args);
+	else
+		dup[i++] = ft_strjoin(args, "=");
 	dup[i] = NULL;
 	ft_arrdel(*arr);
 	*arr = dup;
