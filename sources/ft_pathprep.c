@@ -7,8 +7,6 @@ char	*ft_pathprep(char *args, char *cmd)
 	char	*path;
 	int	i;
 
-	temp = NULL;
-	path = NULL;
 	i = -1;
 	paths = ft_strsplit(args, ':');
 	while (paths && paths[++i])
@@ -16,12 +14,17 @@ char	*ft_pathprep(char *args, char *cmd)
 		temp = ft_strjoin(paths[i], "/");
 		path = ft_strjoin(temp, cmd);
 		if (ft_userex(path) > 0)
-			break;
+		{
+			ft_arrdel(paths);
+			free(temp);
+			return(path);
+		}
 		free(temp);
 		free(path);
 		temp = NULL;
 		path = NULL;
 	}
+	(paths) ? ft_arrdel(paths) : NULL;
 	(temp) ? free(temp) : NULL;
 	return (path);
 }

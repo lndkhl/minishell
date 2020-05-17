@@ -12,7 +12,7 @@ void	ft_command(char **command[], char **env[])
 		if(execve(path, *command, *env) == -1)
 		{
 			ft_putstr("minishell: ");
-			ft_putstr((ft_strrchr(path, '/') + 1));
+			ft_putstr(path);
 			ft_putendl(": command not found");
 			exit(EXIT_SUCCESS);
 		}
