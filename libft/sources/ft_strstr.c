@@ -12,10 +12,10 @@
 
 #include "libft.h"
 
-char				*ft_strstr(const char *haystack, const char *needle)
+char			*ft_strstr(const char *haystack, const char *needle)
 {
 	unsigned int	i;
-	char			*s;
+	char		*s;
 
 	i = 0;
 	if (ft_strlen(needle) == 0)

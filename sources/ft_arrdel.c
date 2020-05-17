@@ -1,14 +1,11 @@
 #include "../includes/minishell.h"
 
-void		ft_arrdel(char **arr)
+void	ft_arrdel(char **arr)
 {
-	int	len;
+	int	i;
 
-	if (arr)
-	{
-		len = ft_arrlen(arr);
-		while (len > -1)
-			free(arr[len--]);
-		free(arr);
-	}
+	i = ft_arrlen(arr);
+	while (--i > -1)
+		free(arr[i]);
+	free(arr);
 }

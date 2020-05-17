@@ -14,7 +14,7 @@
 
 char		*ft_strmap(const char *s, char (*f)(char))
 {
-	int		i;
+	int	i;
 	char	*n;
 
 	i = 0;

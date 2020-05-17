@@ -23,7 +23,7 @@ char		*ft_strrchr(const char *s, int c)
 		return (NULL);
 	if (n == '\0')
 		return ((char *)&s[i]);
-	while (i > 0 && s[i] != n)
+	while (s[i] != n && i > 0)
 		i--;
 	if (i == 0 && s[i] != n)
 		return (NULL);
