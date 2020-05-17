@@ -1,6 +1,7 @@
 #ifndef MINISHELL_H
 # define MINISHELL_H
 # include <sys/types.h>
+# include <sys/stat.h>
 # include <sys/wait.h>
 # include "../libft/includes/libft.h"
 
@@ -14,6 +15,7 @@ void	ft_command(char **cmd[], char **env[]);
 char	*ft_resolve(char *cmd, char *env[]);
 void	ft_prompt(char **env[]);
 char	*ft_key(char *args);
+char	*ft_setpath(char *args, char *env[]);
 /*built-ins*/
 void	ft_exit(char **cmd[], char **env[]);
 void	ft_echo(char **cmd[], char **env[]);
@@ -29,8 +31,10 @@ void	ft_arrprint(char *arr[], char **env[]);
 void	ft_arrpush(char **arr[], char *args);
 /*misc*/
 void	ft_replace(char **arr[], char *args, int index, char *key);
+char	*ft_pathprep(char *args, char *cmd);
 char	*ft_initkey(char *args);
 int	ft_invalidkey(char *args[]);
 int	ft_iswhitespace(char c);
+int	ft_userex(char *c);
 int	ft_isquote(char c);
 #endif

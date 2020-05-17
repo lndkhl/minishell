@@ -5,10 +5,7 @@ void	ft_command(char **command[], char **env[])
 	pid_t	pid;
 	char	*path;
 
-	if (ft_strchr(*command[0], '/'))
-		path = ft_strdup(*command[0]);
-	else
-		path = ft_strjoin("/usr/bin/", *command[0]);
+	path = ft_setpath(*command[0], *env);
 	pid = fork();
 	if (pid == 0)
 	{
