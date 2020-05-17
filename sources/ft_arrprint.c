@@ -10,9 +10,11 @@ void	ft_arrprint(char **arr, char **env[])
 	{
 		if (arr[i][0] == '~' || arr[i][0] == '$')
 		{
-			if ((temp = ft_resolve(arr[i], *env)))
+			temp = ft_resolve(arr[i], *env);
+			if (temp)
 				ft_putstr(temp);
-			if ((temp = ft_strchr(arr[i], '/')))
+			temp = ft_strchr(arr[i], '/');
+			if (temp)
 				ft_putstr(temp);
 		}
 		else

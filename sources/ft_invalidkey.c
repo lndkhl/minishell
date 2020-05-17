@@ -1,6 +1,6 @@
 #include "../includes/minishell.h"
 
-int	ft_validkeys(char *args[])
+int	ft_invalidkey(char *args[])
 {
 	int	i;
 	char	*key;
@@ -14,9 +14,9 @@ int	ft_validkeys(char *args[])
 		if (!ft_isalpha(key[0]) && key[0] != '$')
 		{
 			free (key);
-			return (0);
+			return (1);
 		}
 		free (key);
 	}
-	return (1);
+	return (0);
 }

@@ -9,6 +9,8 @@ char	*ft_resolve(char *command, char *env[])
 
 	i = -1;
 	key = ft_initkey(command);
+	if (!key)
+		return (NULL);
 	while (env[++i])
 	{
 		envkey = ft_initkey(env[i]);
@@ -22,6 +24,5 @@ char	*ft_resolve(char *command, char *env[])
 		free(envkey);
 	}
 	free(key);
-	free(envkey);
 	return (NULL);
 }

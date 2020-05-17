@@ -8,14 +8,14 @@ void	ft_setenv(char **command[], char **env[])
 	char	**temp;
 	char	**args;
 
+	((i = ft_invalidkey(*command))) ? ft_arrdel(*command) : NULL;
+	if (i)
+		return ;
 	temp = ft_arrdup(*env);
 	args = ft_arrdup(*command);
 	ft_arrdel(*env);
 	ft_arrdel(*command);
-	i = 0;
 	j = -1;
-	if (!ft_validkeys(args))
-		return ;
 	while (args[++i])
 	{
 		key = ft_key(args[i]);

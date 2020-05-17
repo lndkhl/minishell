@@ -30,7 +30,7 @@ void	ft_arrpush(char **arr[], char *args);
 /*misc*/
 void	ft_replace(char **arr[], char *args, int index, char *key);
 char	*ft_initkey(char *args);
-int	ft_validkeys(char *args[]);
+int	ft_invalidkey(char *args[]);
 int	ft_iswhitespace(char c);
 int	ft_isquote(char c);
 #endif
