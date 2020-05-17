@@ -7,6 +7,8 @@ void	ft_arrpush(char **arr[], char *args)
 	char	**dup;
 	char	**temp;
 
+	if (args[0] == '$')
+		return ;
 	size = ft_arrlen(*arr);
 	temp = *arr;
 	dup = (char **)malloc(sizeof(char *) * (size + 2));
