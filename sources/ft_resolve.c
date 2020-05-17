@@ -19,6 +19,7 @@ char	*ft_resolve(char *command, char *env[])
 			free(envkey);
 			return (temp);
 		}
+		free(envkey);
 	}
 	free(key);
 	free(envkey);

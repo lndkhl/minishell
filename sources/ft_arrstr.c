@@ -19,8 +19,7 @@ int	ft_arrstr(char *arr[], char *key)
 			free(envkey);
 			return (i);
 		}
-	}
-	if (envkey)
 		free(envkey);
+	}
 	return (-1);
 }
