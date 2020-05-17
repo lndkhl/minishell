@@ -1,5 +1,6 @@
 #ifndef MINISHELL_H
 # define MINISHELL_H
+# define PATH_MAX 256
 # include <sys/types.h>
 # include <sys/stat.h>
 # include <sys/wait.h>
@@ -13,9 +14,11 @@ char	**ft_explode(char *arr, int count);
 char	*ft_argsub(char *args, int *index);
 void	ft_command(char **cmd[], char **env[]);
 char	*ft_resolve(char *cmd, char *env[]);
-void	ft_prompt(char **env[]);
+void	ft_prompt();
 char	*ft_key(char *args);
 char	*ft_setpath(char *args, char *env[]);
+int	ft_checkdir(char *args);
+char	*ft_dirpath(char *args, char **env[]);
 /*built-ins*/
 void	ft_exit(char **cmd[], char **env[]);
 void	ft_echo(char **cmd[], char **env[]);

@@ -21,10 +21,8 @@ void	ft_parse(char *line[], int count, char **env[])
 		ft_setenv(&command, env);
 	else if (ft_strcmp(command[0], "unsetenv") == 0)
 		ft_unsetenv(&command, env);
-	/*
 	else if (ft_strcmp(command[0], "cd") == 0)
-		ft_cd(&command, cd);
-	*/
+		ft_cd(&command, env);
 	else
 		ft_command(&command, env);
 }

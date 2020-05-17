@@ -9,7 +9,7 @@ int	main(int argc, char **argv, char **envp)
 
 	(void)(argc && argv);
 	envy = ft_arrdup(envp);
-	ft_prompt(&envy);
+	ft_prompt();
 	while (get_next_line(STDIN_FILENO, &line) == 1)
 	{
 		if (line[0])
@@ -22,7 +22,7 @@ int	main(int argc, char **argv, char **envp)
 		}
 		else if (line)
 			free(line);
-		ft_prompt(&envy);
+		ft_prompt();
 	}
 	ft_arrdel(envy);
 	return (0);

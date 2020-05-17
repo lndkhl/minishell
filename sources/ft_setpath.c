@@ -21,6 +21,5 @@ char	*ft_setpath(char *args, char *env[])
 		temp = (temp) ? ft_pathprep(temp, args) : NULL;
 		path = (temp) ? temp : ft_strdup(args);
 	}
-	ft_putendl(path);
 	return (path);
 }
