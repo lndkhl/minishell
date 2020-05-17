@@ -15,7 +15,7 @@ void	ft_cd(char **command[], char **env[])
 	else if (ft_strcmp(args[1], "-") == 0)
 		path = ft_strdup(ft_resolve("$OLDPWD", *env));
 	else
-		path = ft_dirpath(*command[1], env);
+		path = ft_dirpath(args[1], env);
 	ft_arrdel(*command);
 	(path) ? ft_putendl(path) : NULL;
 	(path) ? free(path) : NULL;

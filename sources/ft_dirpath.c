@@ -2,20 +2,17 @@
 
 char	*ft_dirpath(char *args, char **env[])
 {
-	char	*key;
 	char	*temp;
 	char	*path;
 	char	link[PATH_MAX];
 
-	ft_putendl("here");
-	key = ft_initkey(args);
-	temp = ft_resolve(key, *env);
+	temp = NULL;
+	temp = ft_resolve(args, *env);
 	if (temp)
 		path = (ft_strchr(args, '/')) ? ft_strjoin(temp,\
 			 ft_strchr(args, '/')) : ft_strdup(temp);
 	else
 		path = ft_strdup(args);
-	free(key);
 	if (ft_checkdir(path) == 0)
 	{
 		free(path);
