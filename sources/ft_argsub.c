@@ -18,7 +18,8 @@ char	*ft_argsub(char *args, int *index)
 	else
 	{
 		i = *index;
-		while (args[i] && !ft_iswhitespace(args[i]))
+		while (args[i] && !ft_iswhitespace(args[i]) && !ft_isquote(args\
+				[i]))
 			i++;
 	}
 	sub = ft_strsub(args, (*index), i - (*index));
